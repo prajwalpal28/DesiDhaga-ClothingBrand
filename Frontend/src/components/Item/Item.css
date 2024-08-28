@@ -1,0 +1,45 @@
+/* Item.css */
+.item {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 200px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.item p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  font-family: "Poppins", sans-serif;
+}
+
+.item-prices {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.item-price-new {
+  color: green;
+  font-weight: bold;
+}
+
+.item-price-old {
+  color: red;
+  text-decoration: line-through;
+}

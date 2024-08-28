@@ -1,0 +1,73 @@
+.relatedproduct {
+  background-color: #fff; /* White background for the section */
+  color: #000; /* Black text color */
+  padding: 20px;
+  font-family: "Arial", sans-serif;
+  overflow-x: auto; /* Allow horizontal scrolling */
+  white-space: nowrap; /* Ensure items stay in a single line */
+}
+
+.relatedproduct h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: #000; /* Black color for the heading */
+  overflow: hidden; /* Hide overflow text */
+  text-overflow: ellipsis; /* Add ellipsis for overflow text */
+  white-space: nowrap; /* Ensure heading stays on one line */
+}
+
+.relatedproduct hr {
+  border: 1px solid #000; /* Black line for the horizontal rule */
+  margin: 20px 0; /* Spacing above and below the line */
+}
+
+.relatedproduct-item {
+  display: flex;
+  gap: 20px; /* Space between items */
+  flex-wrap: nowrap; /* Ensure items do not wrap */
+  overflow-x: auto; /* Allow horizontal scrolling */
+}
+
+.relatedproduct-item .item {
+  background-color: #f9f9f9; /* Light grey background for items */
+  border: 1px solid #ccc; /* Light grey border */
+  padding: 10px;
+  border-radius: 4px; /* Rounded corners */
+  text-align: center;
+  flex: 0 0 auto; /* Prevent flex item from shrinking */
+  width: 200px; /* Set a fixed width for items */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  overflow: hidden; /* Hide overflow content */
+}
+
+.relatedproduct-item .item img {
+  width: 100%; /* Ensure images fill the item width */
+  border-bottom: 1px solid #ccc; /* Separator line between image and text */
+  margin-bottom: 10px;
+}
+
+.relatedproduct-item .item-name {
+  font-size: 1em;
+  color: #000; /* Black color for item names */
+  margin-bottom: 5px;
+  overflow: hidden; /* Hide overflow text */
+  text-overflow: ellipsis; /* Add ellipsis for overflow text */
+  white-space: nowrap; /* Ensure name stays on one line */
+}
+
+.relatedproduct-item .item-prices {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.relatedproduct-item .item-price-old {
+  text-decoration: line-through;
+  font-size: 0.9em;
+  color: #666; /* Grey color for old price */
+}
+
+.relatedproduct-item .item-price-new {
+  font-size: 1.1em;
+  color: #000; /* Black color for new price */
+}
