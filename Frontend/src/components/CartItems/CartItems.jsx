@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import '../CartItems/CartItems.css';
 import { ShopContext } from '../../context/ShopContext';
 import remove_cart from '../assets/remove-cart.png';

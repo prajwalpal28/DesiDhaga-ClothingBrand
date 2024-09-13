@@ -1,4 +1,3 @@
-import React from 'react';
 import './Footer.css';
 import footer_logo from '../assets/Logo.png';
 import insta from '../assets/insta.png';

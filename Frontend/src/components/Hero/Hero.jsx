@@ -1,4 +1,3 @@
-import React from 'react';
 import './Hero.css';
 import hand from '../assets/hand.png';
 import right_arrow from "../assets/right-arrow.png";

@@ -1,12 +1,12 @@
-import React, { useContext } from 'react'
-import './CSS/ShopCategory.css'
-import { ShopContext } from '../context/ShopContext'
-import down_arrow from "../components/assets/down-arrow.png"
-import { Item } from '../components/Item/Item'
+import { useContext } from 'react';
+import PropTypes from 'prop-types';
+import './CSS/ShopCategory.css';
+import { ShopContext } from '../context/ShopContext';
+import down_arrow from "../components/assets/down-arrow.png";
+import { Item } from '../components/Item/Item';
 
 export const ShopCategory = (props) => {
-
-  const { data_product } = useContext(ShopContext)
+  const { data_product } = useContext(ShopContext);
 
   return (
     <div className='shop-category'>
@@ -22,13 +22,17 @@ export const ShopCategory = (props) => {
       <div className="shopcategory-product">
         {data_product.map((item, i) => {
           if (props.Category === item.Category) {
-            return < Item key={i} id={item.id} name={item.name} image={item.image} new_price={item.new_price} old_price={item.old_price} />
+            return <Item key={i} id={item.id} name={item.name} image={item.image} new_price={item.new_price} old_price={item.old_price} />;
           }
-          else {
-            null;
-          }
+          return null;
         })}
       </div>
     </div>
-  )
-}
+  );
+};
+
+// Adding PropTypes validation
+ShopCategory.propTypes = {
+  Category: PropTypes.string.isRequired,
+  banner: PropTypes.string.isRequired,
+};

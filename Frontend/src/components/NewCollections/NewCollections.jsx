@@ -1,4 +1,3 @@
-import React from 'react'
 import './NewCollections.css'
 import data_product from '../assets/data.js'
 import { Item } from '../Item/Item.jsx'

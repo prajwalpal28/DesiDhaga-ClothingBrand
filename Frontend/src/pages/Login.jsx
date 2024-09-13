@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './CSS/Login.css';
 import eye from '../components/assets/eye.png'
 import hide_eye from '../components/assets/hide_eye.png'

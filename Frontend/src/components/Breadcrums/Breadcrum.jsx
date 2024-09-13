@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import '../Breadcrums/Breadcrum.css';
 import arrow_icon from '../assets/Arrow.png';

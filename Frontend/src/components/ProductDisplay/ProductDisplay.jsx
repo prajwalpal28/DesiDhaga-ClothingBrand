@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import PropTypes from 'prop-types';
 import '../ProductDisplay/ProductDisplay.css';
 import star from '../assets/star.png';
@@ -7,8 +7,8 @@ import { ShopContext } from '../../context/ShopContext';
 
 export const ProductDisplay = (props) => {
 
-    const {product} = props;
-    const {addToCart} = useContext(ShopContext);
+    const { product } = props;
+    const { addToCart } = useContext(ShopContext);
     return (
         <div className='productdisplay'>
             <div className="product-display-left">
@@ -53,7 +53,7 @@ export const ProductDisplay = (props) => {
                         <div>XXL</div>
                     </div>
                 </div>
-                <button onClick={()=>{addToCart(product.id)}}>
+                <button onClick={() => { addToCart(product.id) }}>
                     ADD TO CART
                 </button>
                 <p className='productdisplay-right-category'><span>Category :</span>Woman, Saree</p>
@@ -65,11 +65,13 @@ export const ProductDisplay = (props) => {
 // Prop type validation
 ProductDisplay.propTypes = {
     product: PropTypes.shape({
+        id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired, // Add id validation
         image: PropTypes.string.isRequired,
         name: PropTypes.string.isRequired,
         new_price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
         old_price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
     }).isRequired,
 };
+
 
 export default ProductDisplay;
