@@ -1,13 +1,11 @@
 import { useState } from 'react';
 import './CSS/Login.css';
-import eye from '../components/assets/eye.png'
-import hide_eye from '../components/assets/hide_eye.png'
+import eye from '../components/assets/eye.png';
+import hide_eye from '../components/assets/hide_eye.png';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-
 export const Login = () => {
-
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
@@ -15,14 +13,16 @@ export const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:8000/Login', { email, password })
+        
+        // Use the environment variable REACT_APP_PORT in the request URL
+        axios.post(`${process.env.REACT_APP_PORT}/Login`, { email, password })
             .then(result => {
                 console.log(result);
                 if (result.data === "Success") {
-                    navigate("/")
+                    navigate("/");
                 }
             })
-            .catch(err => console.log(err))
+            .catch(err => console.log(err));
     };
 
     const togglePasswordVisibility = () => {
