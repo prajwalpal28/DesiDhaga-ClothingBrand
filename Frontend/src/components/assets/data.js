@@ -61,6 +61,22 @@ let data_product = [
         new_price: 11244,
         old_price: 89200,
     },
+    {
+        id: 8,
+        name: "Antique White Floral Patterned Sequined Sherwani Set",
+        image: p5_img,
+        category: "Woman",
+        new_price: 11244,
+        old_price: 89200,
+    },
+    {
+        id: 9,
+        name: "Antique White Floral Patterned Sequined Sherwani Set",
+        image: p5_img,
+        category: "Woman",
+        new_price: 11244,
+        old_price: 89200,
+    },
 
 ]
 

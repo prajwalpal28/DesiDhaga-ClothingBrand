@@ -6,6 +6,18 @@ import remove_cart from '../assets/remove-cart.png';
 export const CartItems = () => {
     const { getTotalCartAmmount, data_product = [], cartItems, removeFromCart } = useContext(ShopContext);
 
+    // Calculate the subtotal for the cart
+    const calculateSubtotal = () => {
+        return data_product.reduce((total, product) => {
+            const quantity = cartItems[product.id] || 0;
+            return total + (product.new_price * quantity);
+        }, 0);
+    };
+
+    const subtotal = calculateSubtotal();
+    const GST = subtotal * 0.18;  // Assuming 18% GST
+    const totalAmount = subtotal + GST;
+
     return (
         <div className='cartitems'>
             <div className="cartitems-format-main">
@@ -16,7 +28,6 @@ export const CartItems = () => {
                     <p>Quantity</p>
                     <p>Total</p>
                     <p>Remove</p>
-
                 </div>
                 <hr />
                 {data_product.map((e) => {
@@ -38,12 +49,12 @@ export const CartItems = () => {
                     return null;
                 })}
                 <div className="cartitems-down">
-                    <div className="certitems-total">
+                    <div className="cartitems-total">
                         <h1>Cart Totals</h1>
                         <div>
                             <div className="cartitems-total-item">
                                 <p>Subtotal</p>
-                                <p>₹{getTotalCartAmmount()}</p>
+                                <p>₹{subtotal}</p>
                             </div>
                             <hr />
                             <div className="cartitems-total-item">
@@ -52,16 +63,22 @@ export const CartItems = () => {
                             </div>
                             <hr />
                             <div className="cartitems-total-item">
+                                <p>GST (18%)</p>
+                                <p>₹{GST.toFixed(2)}</p> {/* Display GST to 2 decimal places */}
+                            </div>
+                            <hr />
+                            <div className="cartitems-total-item">
                                 <h3>Total</h3>
-                                <h3>₹{getTotalCartAmmount()}</h3>
+                                <h3>₹{totalAmount.toFixed(2)}</h3> {/* Total amount with GST */}
                             </div>
                         </div>
                         <button>Proceed To Checkout</button>
                     </div>
+
                     <div className="cartitems-promocode">
                         <p>If you have a Promo code, Enter It here</p>
                         <div className="cartitem-promodox">
-                            <input type="text" placeholder='Promo Code'/>
+                            <input type="text" placeholder='Promo Code' />
                             <button>Submit</button>
                         </div>
                     </div>
